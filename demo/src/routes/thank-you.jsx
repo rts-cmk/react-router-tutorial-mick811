@@ -4,8 +4,8 @@ export default function ThankYou() {
   return (
     <div>
       <h1>Tak for din besked!</h1>
-      <p>Vi vil kontakte dig snart.</p>
-      <Link to="/">Gå til forsiden</Link>
+      <p>Vi har modtaget din henvendelse og vender tilbage snarest muligt.</p>
+      <p><Link to="/">Gå til forsiden</Link></p>
     </div>
   );
 }

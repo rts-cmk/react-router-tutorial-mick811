@@ -12,8 +12,28 @@ export default function Contact() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <button type="submit">Send</button>
-    </form>
+    <div>
+      <h1>Kontakt os</h1>
+      <p>Send os en besked, så vender vi tilbage hurtigst muligt!</p>
+      
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Navn:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="message">Besked:</label>
+          <textarea id="message" name="message" rows="4" required />
+        </div>
+        
+        <button type="submit">Send besked</button>
+      </form>
+    </div>
   );
 }

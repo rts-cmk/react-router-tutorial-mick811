@@ -49,14 +49,30 @@ html, body {
 
 .line-numbers .line-numbers-rows {
   border-right: none !important;
-  left: -3.8rem !important;
+  /* left: -3.8rem !important; */
 }
 
+/*
 pre[class*="language-"].line-numbers {
   padding-left: 3em !important;
 }
+*/
 
 [data-gap] {
   display: inline-block;
   margin-inline: 0.5rem;
+}
+
+[data-gap-block] {
+  margin-block: 1.5rem;
+}
+
+.inline-code {
+  background-color: #f3f4f6;
+  color: #374151;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  border: 1px solid #e5e7eb;
 }

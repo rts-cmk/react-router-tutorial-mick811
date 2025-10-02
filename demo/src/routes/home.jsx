@@ -1,48 +1,47 @@
+import { Markdown, CodeBlock } from "../components/code-block";
 import Section from "../components/section";
-import CodeBlock from "../components/code-block";
 import Highlighter from "../components/highlightText";
 
 export default function Home() {
   return (
     <>
-      <Section title={"React Router Guide (Declarative Routing)"}>
+      <Section title={"React Router Guide"}>
         <p>
-          React Router er et populært bibliotek til at håndtere routing i React applikationer. Det er et kraftigt værktøj, der giver dig mulighed for at håndtere routing på en meget fleksibel og effektiv måde.
+          <strong>React Router</strong> er en populær biblioteks-løsning til at håndtere navigation og routing i React-applikationer.
+          Det giver dig mulighed for at opdele din app i forskellige sider eller visninger, som brugeren kan navigere imellem uden at genindlæse hele siden.
         </p>
+
+        <div data-gap-block>
+          <p>
+            <strong>Declarative Mode</strong> betyder, at du beskriver <em>hvad</em> du vil have (aka. hvilke routes der skal eksistere)
+            i stedet for <em>hvordan</em> routing skal implementeres teknisk. Du bruger JSX-komponenter som
+            <Highlighter action="underline" color="#10b981" strokeWidth={2}>{`<Routes>`}</Highlighter> og
+            <Highlighter action="underline" color="#10b981" strokeWidth={2}>{`<Route>`}</Highlighter>
+            til at definere din routing-struktur direkte i din kode, ligesom du definerer andre UI-elementer.
+          </p>
+
+          <p data-gap-block>
+            Dette er anderledes end <strong>Framework Mode</strong>, hvor du definerer routes i separate konfigurationsfiler.
+            Declarative Mode giver dig mere kontrol og fleksibilitet, mens Framework Mode giver dig flere indbyggede features som
+            server-side rendering og data loading.
+          </p>
+        </div>
       </Section>
       <Section title={"Installation"}>
         <p>
-          Du kan nemt oprette et nyt Vite projekt med React Router inkluderet ved at køre denne kommando i din terminal. Dette vælger automatisk React som template, og JavaScript som standard.
-        </p>
-        <CodeBlock
-          language={"javascript"}
-          code={
-            `npm create vite@latest app -- --template react`
-          }
-        />
-        <p>
-          Herefter skal du installere alle dependencies ved at køre kommandoerne i din terminal. En dependency er et eksternt bibliotek, som din applikation bruger til at implementere specifikke løsninger, f.eks. React Router.
-        </p>
-        <CodeBlock
-          language={"javascript"}
-          code={
-            `npm i react-router`
-          }
-        />
-        <p>
-          Denne dependency er nødvendig for at kunne bruge de komponenter, som React Router tilbyder, såsom{" "}
-          {["<Link />", "<NavLink />", "<Outlet />"].map((component, index) => (
-            <span key={index}>
-              <Highlighter action="underline" color={"#000"} strokeWidth={3}>
-                {component}
-              </Highlighter>
-              {index < 2 ? ", " : " og"}
-            </span>
-          ))}
-          <Highlighter action="underline" color={"#000"} strokeWidth={3}>
-            {`useNavigate()`}
+          Lad os starte fra bunden og oprette et helt nyt React projekt med Vite.
+          <Highlighter action="underline" color="#3b82f6" strokeWidth={2}>
+            Vite er en moderne build-tool
           </Highlighter>
-          .
+          {" "}der gør udvikling hurtigere med instant hot reload, optimeret bundling og hurtig startup-tid.
+        </p>
+
+        <CodeBlock
+          language="bash"
+          code="npm create vite@latest min-router-app -- --template react"
+        />
+        <p>
+          Hvad det egentlig betyder, er at vi opretter en Vite applikation med React som template, og JavaScript som standard.
         </p>
       </Section>
     </>

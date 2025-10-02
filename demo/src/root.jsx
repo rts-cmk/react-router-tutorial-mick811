@@ -1,5 +1,6 @@
 import { Outlet, Scripts, Links } from "react-router";
 import Navigation from "./components/navigation";
+import "./index.css";
 
 export default function App() {
   return (
@@ -24,8 +25,3 @@ export default function App() {
   );
 }
 
-export function links() {
-  return [
-    { rel: "stylesheet", href: "/src/index.css" }
-  ];
-}

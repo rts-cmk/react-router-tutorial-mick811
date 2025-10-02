@@ -10,26 +10,23 @@ body {
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #121010;
+  color: #f3f4f6;
 }
 
 a {
   color: #3b82f6;
-  text-decoration: none;
 }
 
 p {
   font-size: 1rem;
   line-height: 1.5rem;
-  color: #374151;
 }
 
 html, body {
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
-  background-color: white;
   min-height: 100vh;
 }
 
@@ -41,10 +38,10 @@ html, body {
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 600;
-  color: #111827;
+  color: #f3f4f6;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #374151;
 }
 
 .line-numbers .line-numbers-rows {
@@ -68,11 +65,11 @@ pre[class*="language-"].line-numbers {
 }
 
 .inline-code {
-  background-color: #f3f4f6;
-  color: #374151;
+  background-color: #252627;
+  color: #f3f4f6;
   padding: 0.125rem 0.5rem;
   border-radius: 0.25rem;
   font-size: 0.875rem;
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #171717;
 }

@@ -10,19 +10,22 @@ npx create-react-router app
 ```
 
 ## Manuel opsætning
-Først og fremmest, skal du opsætte vite. Jeg laver en vite applikation under `app` folderen, hvor jeg siger den skal bruge react template, dette vælger automatisk JavaScript som standard.
+Først og fremmest, skal du opsætte vite. Jeg laver en vite applikation som hedder `app`, hvor jeg siger den skal bruge react template, dette vælger automatisk JavaScript som standard.
 ```
 npm create vite@latest app -- --template react
 ```
-Efter du har gjort det, skal du installere alle dependencies ved at køre følgende kommando i din terminal:
+Efter du har gjort det, skal du installere alle dependencies ved at køre følgende kommandoer i din terminal:
+En dependency er i grove træk et ekstern bibliotek, med en masse kode som din applikation har brug for at kunne implementere specifikke løsninger
+f.eks. det React Router tilbyder.
+
 ```
 npm i react-router @react-router/node @react-router/serve isbot react react-dom
 npm i -D @react-router/dev vite
 ```
 
-Inden du begynder skal du slette alting under `src` mappen, samt `index.html` i root af din `app` mappe.
+Inden du begynder skal du slette alting under `src` mappen.
 
-Derefter skal du finde din `vite.config.js`, den kan du finde i root folderen af din `app` folder. Så snart du har fundet den, skal du bruge den her basale konfiguration, hvilket meget gerne burde være standarden.
+Derefter skal du finde din `vite.config.js`, den kan du finde i root folderen af din `app` folder. Så snart du har fundet den, skal du bruge den her basale konfiguration.
 ```js
 import { reactRouter } from "@react-router/dev/vite";
 import { defineConfig } from "vite";
@@ -80,7 +83,7 @@ export default []
 npm pkg set type="module"
 ```
 
-4. Så skal du lave en `react-router.config.js`, er React Router v7's hovedkonfigurationsfil. Den bruges til at konfigurere hvordan React Router skal bygge og køre din applikation.
+4. Så skal du lave en `react-router.config.js`, det er React Router v7's hovedkonfigurationsfil. Den bruges til at konfigurere hvordan React Router skal bygge og køre din applikation.
 ```js
 export default {
    // hvor din kode ligger (aka root.jsx, routes/, osv.).

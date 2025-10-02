@@ -1,5 +1,4 @@
 import { Outlet, Scripts, Links } from "react-router";
-import Navigation from "./components/navigation";
 import "./index.css";
 
 export default function App() {
@@ -15,7 +14,6 @@ export default function App() {
         />
       </head>
       <body>
-        <Navigation />
         <main>
           <Outlet />
         </main>

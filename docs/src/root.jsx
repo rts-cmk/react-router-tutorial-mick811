@@ -1,4 +1,4 @@
-import { Outlet, Scripts, Links } from "react-router";
+import { Outlet, Scripts, Links, NavLink } from "react-router";
 import "./index.css";
 
 export default function App() {
@@ -14,6 +14,11 @@ export default function App() {
         />
       </head>
       <body>
+        <div className="nav">
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/not-found">Not Found</NavLink>
+        </div>
         <main>
           <Outlet />
         </main>

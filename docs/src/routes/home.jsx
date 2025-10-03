@@ -325,6 +325,20 @@ export default function App() {
           </a>.
         </p>
       </Section>
+
+      <Section>
+        <p>
+          Hvis du vil teste det hele, kan du klone nedenstående repository, og køre det lokalt.
+        </p>
+        <CodeBlock
+          language="bash"
+          code={`git clone https://github.com/rts-cmk/react-router-tutorial-mick811.git
+git checkout dev
+cd test
+npm install
+npm run dev`}
+        />
+      </Section>
     </>
   )
 }

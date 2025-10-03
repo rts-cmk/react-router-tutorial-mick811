@@ -37,6 +37,25 @@ export default function App() {
                   Contact
                 </NavLink>
               </li>
+              <li>
+                <select 
+                  onChange={(e) => {
+                    const userId = e.target.value;
+                    if (userId) {
+                      window.location.href = `/user/${userId}`;
+                    }
+                  }}
+                  className="bg-[#121010] text-gray-300 hover:text-white border-none focus:outline-none"
+                  aria-label="Select a user to view their profile"
+                >
+                  <option value="">Select User</option>
+                  <option value="1">User 1</option>
+                  <option value="2">User 2</option>
+                  <option value="3">User 3</option>
+                  <option value="4">User 4</option>
+                  <option value="5">User 5</option>
+                </select>
+              </li>
             </ul>
           </nav>
         </header>

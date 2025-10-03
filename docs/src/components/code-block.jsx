@@ -4,7 +4,7 @@ import 'prism-themes/themes/prism-vsc-dark-plus.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
-export function CodeBlock({ language = 'javascript', code }) {
+export function CodeBlock({ language = 'javascript', code, filename }) {
   const preRef = useRef(null);
 
   useEffect(() => {
@@ -22,22 +22,32 @@ export function CodeBlock({ language = 'javascript', code }) {
 
   return (
     <div className='code-block-container'>
-      <button 
-        onClick={handleCopyCode}
-        className='copy-code-button'
-        aria-label="Copy code to clipboard"
-        tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            handleCopyCode();
-          }
-        }}
-      >
-        Copy
-      </button>
+      {filename && (
+        <div className='code-block-header'>
+          <span className='code-block-filename'>{filename}</span>
+          <button 
+            onClick={handleCopyCode}
+            className='copy-code-button-header'
+            aria-label="Copy code to clipboard"
+            tabIndex={0}
+          >
+            Copy
+          </button>
+        </div>
+      )}
+      {!filename && (
+        <button 
+          onClick={handleCopyCode}
+          className='copy-code-button'
+          aria-label="Copy code to clipboard"
+          tabIndex={0}
+        >
+          Copy
+        </button>
+      )}
       <pre 
         ref={preRef} 
-        className={`code-block-pre ${showLineNumbers ? 'line-numbers' : ''}`}
+        className={`code-block-pre ${showLineNumbers ? 'line-numbers' : ''} ${filename ? 'with-header' : ''}`}
       >
         <code className={`language-${language}`}>
           {code}

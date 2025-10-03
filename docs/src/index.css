@@ -87,49 +87,66 @@ pre[class*="language-"].line-numbers {
 .code-block-container {
   position: relative;
   margin: 1rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
-.code-block-pre {
-  background-color: #1e1e1e;
-  color: #d4d4d4;
-  padding: 1rem;
-  border-radius: 0.375rem;
-  overflow-x: auto;
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+.code-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #191c21;
+  padding: 0.75rem 1rem;
+}
+
+.code-block-filename {
+  color: #e2e8f0;
   font-size: 0.875rem;
-  line-height: 1.5;
-  border: 1px solid #333;
+  font-weight: 500;
+}
+
+.code-block-pre.with-header {
+  border-radius: 0;
+}
+
+.code-block-pre code {
+  display: block;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.code-block-container pre[class*="language-"] {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 0;
 }
 
 .copy-code-button {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  background-color: #374151;
+  background-color: #191c21;
   color: #f3f4f6;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #4b5563;
-  border-radius: 0.375rem;
-  font-size: 0.875rem;
-  font-weight: 500;
   cursor: pointer;
   z-index: 10;
-  transition: all 0.2s ease-in-out;
-  opacity: 0.8;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #374151;
+  font-size: 0.875rem;
 }
 
-.copy-code-button:hover {
-  background-color: #4b5563;
-  border-color: #6b7280;
-  opacity: 1;
-  transform: translateY(-1px);
+.copy-code-button-header {
+  background-color: #191c21;
+  color: #f3f4f6;
+  cursor: pointer;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #374151;
+  font-size: 0.875rem;
 }
 
-.copy-code-button:active {
-  transform: translateY(0);
-}
-
-.copy-code-button:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
+.copy-code-button:hover,
+.copy-code-button-header:hover {
+  background-color: #1e2732;
 }

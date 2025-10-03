@@ -62,8 +62,8 @@ cd app`}
           Vi starter med kun én route, og tilføjer flere senere, når vi har oprettet de nødvendige sider.
         </p>
         <CodeBlock
-          code={`// src/main.jsx
-import ReactDOM from "react-dom/client";
+          filename="src/main.jsx"
+          code={`import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App";
 
@@ -94,8 +94,8 @@ ReactDOM.createRoot(root).render(
           Nu er vi klar til at tilpasse vores startside. Vi går ind i vores allerede oprettede <Markdown>{`src/App.jsx`}</Markdown> fil og laver den om, så den er klar til at navigere til en side, vi opretter senere.
         </p>
         <CodeBlock
-          code={`// src/App.jsx
-import { Link } from "react-router";
+          filename="src/App.jsx"
+          code={`import { Link } from "react-router";
 
 export default function App() {
   return (
@@ -110,8 +110,8 @@ export default function App() {
           Nu opretter vi en ny side, så vi kan teste routing senere. Vi laver en <Markdown>{`About.jsx`}</Markdown> fil under <Markdown>{`src/routes`}</Markdown> mappe, og strukturerer den således.
         </p>
         <CodeBlock
-          code={`// src/routes/About.jsx
-import { Link } from "react-router";
+          filename="src/routes/About.jsx"
+          code={`import { Link } from "react-router";
 
 export default function About() {
   return (
@@ -126,8 +126,8 @@ export default function About() {
           Når du har oprettet About-siden, kan du tilføje den til dine routes i <Markdown>{`src/main.jsx`}</Markdown>. Opdater din kode således:
         </p>
         <CodeBlock
-          code={`// src/main.jsx
-import ReactDOM from "react-dom/client";
+          filename="src/main.jsx"
+          code={`import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App";
 import About from "./routes/about";
@@ -258,6 +258,7 @@ export default function City() {
           Vi kan bruge <Highlighter action="underline" color="#10b981" strokeWidth={2}>Link</Highlighter> komponenten til at navigere til en side.
         </p>
         <CodeBlock
+          filename="src/App.jsx"
           code={`import { Link } from "react-router";
 
 export default function App() {
@@ -272,6 +273,7 @@ export default function App() {
           Og det her fungere, så når man er inde på <Markdown>/</Markdown> vil <Markdown>Home</Markdown> vil den have en blå farve og fed skrift i stedet for den normale farve og skrift.
         </p>
         <CodeBlock
+          filename="src/App.jsx"
           code={`import { NavLink } from "react-router";
 
 export default function App() {
@@ -287,6 +289,7 @@ export default function App() {
           Derudover kan du også bruge <Highlighter action="underline" color="#10b981" strokeWidth={2}>useNavigate</Highlighter> hooken til at navigere til en side.
         </p>
         <CodeBlock
+          filename="src/App.jsx"
           code={`import { useNavigate } from "react-router";
 
 export default function App() {

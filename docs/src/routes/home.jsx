@@ -38,7 +38,8 @@ export default function Home() {
 
         <CodeBlock
           language="bash"
-          code="npm create vite@latest app -- --template react"
+          code={`npm create vite@latest app -- --template react
+cd app`}
         />
         <p>
           Hvad det egentlig betyder, er at vi opretter en Vite applikation med React som template, og JavaScript som standard.
@@ -62,7 +63,6 @@ export default function Home() {
         </p>
         <CodeBlock
           code={`// src/main.jsx
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App";
@@ -107,10 +107,10 @@ export default function App() {
 }`}
         />
         <p>
-          Nu opretter vi en ny side, så vi kan teste routing senere. Vi laver en <Markdown>{`about.jsx`}</Markdown> fil under <Markdown>{`src/routes`}</Markdown> mappe, og strukturerer den således.
+          Nu opretter vi en ny side, så vi kan teste routing senere. Vi laver en <Markdown>{`About.jsx`}</Markdown> fil under <Markdown>{`src/routes`}</Markdown> mappe, og strukturerer den således.
         </p>
         <CodeBlock
-          code={`// src/routes/about.jsx
+          code={`// src/routes/About.jsx
 import { Link } from "react-router";
 
 export default function About() {
@@ -127,7 +127,6 @@ export default function About() {
         </p>
         <CodeBlock
           code={`// src/main.jsx
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App";
@@ -146,6 +145,10 @@ ReactDOM.createRoot(root).render(
 `}
         />
         <p>
+          Og nu har du faktisk opsat React Router i din React applikation! Du kan altid læse videre, og forstå de forskellige patterns
+          og muligheder, der findes i React Router. Men det her er det grundlæggende setup.
+        </p>
+        <p data-gap-block>
           Ved at tilføje routes først efter siderne er oprettet, undgår du potentielle fejl og gør din kode mere overskuelig.
         </p>
       </Section>
@@ -184,18 +187,8 @@ ReactDOM.createRoot(root).render(
         />
         <p>
           <Highlighter action="underline" color="#8b5cf6" strokeWidth={2}>Dynamic segments</Highlighter>
-          {" "}starter med <Markdown>:</Markdown> og matcher alt i den position. <Markdown>:userId</Markdown> matcher
-          <Markdown>/users/123</Markdown>, <Markdown>/users/john</Markdown>, eller <Markdown>/users/abc-def</Markdown>.
-        </p>
-
-        <p><strong>Catchall Route (404)</strong></p>
-        <CodeBlock
-          code={`<Route path="*" element={<NotFound />} />`}
-        />
-        <p>
-          <Highlighter action="underline" color="#ef4444" strokeWidth={2}>Catchall routes</Highlighter>
-          {" "}med <Markdown>path="*"</Markdown> matcher alle URLs der ikke matcher andre routes.
-          Perfekt til 404-sider. Placér altid denne route sidst!
+          {" "}starter med <Markdown>:</Markdown> og matcher alt i den position. <Markdown>:city</Markdown> matcher
+          <Markdown>/cities/Copenhagen</Markdown>, <Markdown>/cities/test</Markdown>, eller <Markdown>/cities/123</Markdown>.
         </p>
 
         <p><strong>Hent værdier fra dynamic routes</strong></p>
@@ -213,6 +206,16 @@ export default function City() {
           Brug <Highlighter action="underline" color="#8b5cf6" strokeWidth={2}>useParams()</Highlighter>
           {" "}hook til at hente værdier fra URL'en. Hvis URL'en er <Markdown>/cities/copenhagen</Markdown>,
           får du <Markdown>city = "copenhagen"</Markdown>.
+        </p>
+
+        <p><strong>Catchall Route (404)</strong></p>
+        <CodeBlock
+          code={`<Route path="*" element={<NotFound />} />`}
+        />
+        <p>
+          <Highlighter action="underline" color="#ef4444" strokeWidth={2}>Catchall routes</Highlighter>
+          {" "}med <Markdown>path="*"</Markdown> matcher alle URLs der ikke matcher andre routes.
+          Perfekt til 404-sider. Placér altid denne route sidst!
         </p>
 
         <p><strong>Komplet eksempel med alle patterns</strong></p>
@@ -302,18 +305,18 @@ export default function App() {
 
         <p data-gap-block>
           Har du brug for yderligere hjælp, kan du udforske React Router's officielle dokumentation{" "}
-          <a 
-            href="https://reactrouter.com/en/main" 
-            target="_blank" 
+          <a
+            href="https://reactrouter.com/en/main"
+            target="_blank"
             rel="noopener noreferrer"
             aria-label="Link til React Router officielle dokumentation"
             tabIndex={0}
           >
             her
           </a>, eller tjek deres API reference{" "}
-          <a 
-            href="https://reactrouter.com/start/declarative/installation" 
-            target="_blank" 
+          <a
+            href="https://reactrouter.com/start/declarative/installation"
+            target="_blank"
             rel="noopener noreferrer"
             aria-label="Link til React Router API reference"
             tabIndex={0}

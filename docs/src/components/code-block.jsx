@@ -16,15 +16,34 @@ export function CodeBlock({ language = 'javascript', code }) {
   const lines = code.split('\n');
   const showLineNumbers = lines.length > 1;
 
+  const handleCopyCode = () => {
+    navigator.clipboard.writeText(code)
+  };
+
   return (
-    <pre 
-      ref={preRef} 
-      className={`rounded-md overflow-x-auto ${showLineNumbers ? 'line-numbers' : ''}`}
-    >
-      <code className={`language-${language}`}>
-        {code}
-      </code>
-    </pre>
+    <div className='code-block-container'>
+      <button 
+        onClick={handleCopyCode}
+        className='copy-code-button'
+        aria-label="Copy code to clipboard"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            handleCopyCode();
+          }
+        }}
+      >
+        Copy
+      </button>
+      <pre 
+        ref={preRef} 
+        className={`code-block-pre ${showLineNumbers ? 'line-numbers' : ''}`}
+      >
+        <code className={`language-${language}`}>
+          {code}
+        </code>
+      </pre>
+    </div>
   );
 }
 
@@ -46,7 +65,7 @@ export function Markdown({ language, children }) {
 
   if (isInlineCode) {
     return (
-      <code className="inline-code bg-gray-100 px-2 py-1 rounded text-sm font-mono">
+      <code className="inline-code">
         {codeContent}
       </code>
     );
@@ -54,15 +73,15 @@ export function Markdown({ language, children }) {
 
   const showLineNumbers = lines.length > 1;
 
-  return (
-    <pre
-      ref={preRef}
-      className={`rounded-md overflow-x-auto bg-gray-900 text-gray-100 p-4 ${showLineNumbers ? 'line-numbers' : ''}`}
-    >
-      <code className={language ? `language-${language}` : 'language-text'}>
-        {codeContent}
-      </code>
-    </pre>
-  );
+    return (
+      <pre
+        ref={preRef}
+        className={`code-block-pre ${showLineNumbers ? 'line-numbers' : ''}`}
+      >
+        <code className={language ? `language-${language}` : 'language-text'}>
+          {codeContent}
+        </code>
+      </pre>
+    );
 }
 

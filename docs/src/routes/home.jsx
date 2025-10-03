@@ -232,15 +232,15 @@ export default function City() {
   <Route path="/users/:userId" element={<User />} />
   <Route path="/cities/:city" element={<City />} />
   <Route path="/blog/:year/:month/:slug" element={<BlogPost />} />
-  
-  {/* Catchall - matcher alt andet (404) */}
-  <Route path="*" element={<NotFound />} />
 
   {/* Nested routes - matcher paths inden i en parent route */}
   <Route path="/dashboard" element={<Dashboard />}>
     <Route path="profile" element={<Profile />} />
     <Route path="settings" element={<Settings />} />
   </Route>
+
+  {/* Catchall - matcher alt andet (404) */}
+  <Route path="*" element={<NotFound />} />
 </Routes>`}
         />
         <p>

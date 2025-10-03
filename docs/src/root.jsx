@@ -14,11 +14,32 @@ export default function App() {
         />
       </head>
       <body>
-        <div className="nav">
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
-          <NavLink to="/not-found">Not Found</NavLink>
-        </div>
+        <header className="p-4">
+          <nav className="flex justify-between items-center">
+            <div className="text-white text-lg font-bold">
+              <NavLink to="/" className="hover:text-blue-400">
+                React Router Guide
+              </NavLink>
+            </div>
+            <ul className="flex gap-4">
+              <li>
+                <NavLink to="/" className="text-gray-300 hover:text-white">
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/about" className="text-gray-300 hover:text-white">
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact" className="text-gray-300 hover:text-white">
+                  Contact
+                </NavLink>
+              </li>
+            </ul>
+          </nav>
+        </header>
         <main>
           <Outlet />
         </main>

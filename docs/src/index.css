@@ -1,3 +1,4 @@
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
@@ -15,6 +16,10 @@ body {
 }
 
 a {
+  color: #fff;
+}
+
+.active {
   color: #3b82f6;
 }
 
@@ -72,16 +77,6 @@ pre[class*="language-"].line-numbers {
   font-size: 0.875rem;
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
   border: 1px solid #171717;
-}
-
-.nav {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.nav .active {
-  color: red;
 }
 
 .code-block-container {
